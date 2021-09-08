@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import pjatk.thesis.botapi.security.domain.BotApiRole;
 import pjatk.thesis.botapi.security.domain.BotApiUser;
-import pjatk.thesis.botapi.service.BotApiSecurityService;
+import pjatk.thesis.botapi.security.service.BotApiSecurityService;
 
 @SpringBootApplication
 public class BotApiApplication {

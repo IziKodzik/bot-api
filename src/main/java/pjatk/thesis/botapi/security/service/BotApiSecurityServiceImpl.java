@@ -1,4 +1,4 @@
-package pjatk.thesis.botapi.service;
+package pjatk.thesis.botapi.security.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package pjatk.thesis.botapi.service;
+package pjatk.thesis.botapi.security.service;
 
 import pjatk.thesis.botapi.security.domain.BotApiRole;
 import pjatk.thesis.botapi.security.domain.BotApiUser;
