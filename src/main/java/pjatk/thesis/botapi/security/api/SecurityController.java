@@ -9,7 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import pjatk.thesis.botapi.security.api.dtos.AddRoleToUserDto;
-import pjatk.thesis.botapi.security.domain.BotApiRole;
+import pjatk.thesis.botapi.security.domain.CBotApiRole;
 import pjatk.thesis.botapi.security.domain.BotApiUser;
 import pjatk.thesis.botapi.security.service.BotApiSecurityService;
 
@@ -42,7 +42,7 @@ public class SecurityController {
         return ResponseEntity.ok(securityService.saveUser(user).toString());
     }
     @PostMapping("/role")
-    public ResponseEntity<String> saveRole(@RequestBody BotApiRole role){
+    public ResponseEntity<String> saveRole(@RequestBody CBotApiRole role){
         return ResponseEntity.ok(securityService.saveRole(role).toString());
     }
     @PostMapping("/role-user")

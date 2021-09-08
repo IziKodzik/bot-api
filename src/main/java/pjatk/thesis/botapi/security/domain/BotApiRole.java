@@ -1,29 +1,19 @@
 package pjatk.thesis.botapi.security.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.google.common.collect.Sets;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-import javax.persistence.*;
-import java.util.Collection;
-import java.util.HashSet;
+import java.util.Set;
 
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class BotApiRole {
+import static pjatk.thesis.botapi.security.domain.BotApiPermission.*;
 
-    public BotApiRole(String name) {
-        this.name = name;
-    }
+@RequiredArgsConstructor
+@Getter
+public enum BotApiRole {
+    CLIENT(Sets.newHashSet(API_READ)),
+    ADMIN(Sets.newHashSet(API_WRITE,API_READ)),
+    MANAGER(Sets.newHashSet(API_WRITE));
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    private String name;
-
-    @ManyToMany
-    private Collection<BotApiUser> users = new HashSet<>();
+    private final Set<BotApiPermission> permissions;
 }

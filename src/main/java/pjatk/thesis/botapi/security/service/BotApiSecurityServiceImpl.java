@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
-import pjatk.thesis.botapi.security.domain.BotApiRole;
+import pjatk.thesis.botapi.security.domain.CBotApiRole;
 import pjatk.thesis.botapi.security.domain.BotApiUser;
 import pjatk.thesis.botapi.security.repo.BotApiRoleRepo;
 import pjatk.thesis.botapi.security.repo.BotApiUserRepo;
@@ -49,7 +49,7 @@ public class BotApiSecurityServiceImpl implements BotApiSecurityService, UserDet
     }
 
     @Override
-    public BotApiRole saveRole(BotApiRole role) {
+    public CBotApiRole saveRole(CBotApiRole role) {
         log.info("Saving role {}",role.getName());
         return roleRepo.save(role);
     }
@@ -59,7 +59,7 @@ public class BotApiSecurityServiceImpl implements BotApiSecurityService, UserDet
     public void addRoleToUser(String email, String roleName) {
         log.info("Saving user {} role {}",email,roleName);
         BotApiUser user = userRepo.findByEmail(email);
-        BotApiRole role = roleRepo.findByName(roleName);
+        CBotApiRole role = roleRepo.findByName(roleName);
         user.getRoles().add(role);
         role.getUsers().add(user);
     }
@@ -77,7 +77,7 @@ public class BotApiSecurityServiceImpl implements BotApiSecurityService, UserDet
     }
 
     @Override
-    public BotApiRole getRoleByName(String name) {
+    public CBotApiRole getRoleByName(String name) {
         log.info("Sarching rolee {}",name);
         return roleRepo.findByName(name);
     }

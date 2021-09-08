@@ -1,10 +1,10 @@
 package pjatk.thesis.botapi.security.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pjatk.thesis.botapi.security.domain.BotApiRole;
+import pjatk.thesis.botapi.security.domain.CBotApiRole;
 
-public interface BotApiRoleRepo extends JpaRepository<BotApiRole, Long> {
+public interface BotApiRoleRepo extends JpaRepository<CBotApiRole, Long> {
 
-    BotApiRole findByName(String name);
+    CBotApiRole findByName(String name);
 
 }

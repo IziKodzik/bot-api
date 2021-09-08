@@ -29,7 +29,7 @@ public class BotApiUser {
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
     @JsonIgnoreProperties(value = "users",allowSetters = true)
-    private Collection<BotApiRole> roles = new HashSet<>();
+    private Collection<CBotApiRole> roles = new HashSet<>();
 
 
 }
